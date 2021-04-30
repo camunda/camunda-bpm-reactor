@@ -103,4 +103,11 @@ public class ReactorProcessEnginePluginTest {
     verify(task).addCandidateGroup("bar");
     verify(task).setName("my task");
   }
+
+  @Test
+  public void provides_default_constructor() throws Exception {
+    ReactorProcessEnginePlugin plugin = new ReactorProcessEnginePlugin();
+
+    assertThat(plugin.getEventBus()).isNotNull();
+  }
 }

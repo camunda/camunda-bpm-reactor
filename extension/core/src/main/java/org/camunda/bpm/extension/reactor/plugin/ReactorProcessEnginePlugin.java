@@ -19,6 +19,15 @@ public class ReactorProcessEnginePlugin extends AbstractProcessEnginePlugin {
 
   private boolean reactorListenerFirstOnUserTask = false;
 
+  /**
+   * Default constructor for bean initialization. Uses <code>new CamundaEventBus()</code>.
+   *
+   * @see #ReactorProcessEnginePlugin(CamundaEventBus)
+   */
+  public ReactorProcessEnginePlugin() {
+    this(new CamundaEventBus());
+  }
+
   public ReactorProcessEnginePlugin(final CamundaEventBus eventBus) {
     this.eventBus = eventBus;
   }
